@@ -133,6 +133,9 @@ static SiteSpecific certs[] = {
         "surf-setprop", winid, r, s, p, NULL \
     } \
 }
+#define QSEARCH { \
+    .v = (char *[]){"/bin/sh", "-c", "surf_qsearch $0 $1", winid, NULL } \
+}
 
 /* hotkeys */
 /*
@@ -146,6 +149,7 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_slash,  spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_z,      spawn,      ADDBMK },
 	{ MODKEY,                GDK_KEY_z,      spawn,      LOADBMK("_SURF_URI", "_SURF_GO", PROMPT_GO) },
+	{ MODKEY,                GDK_KEY_q,      spawn,      QSEARCH },
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
