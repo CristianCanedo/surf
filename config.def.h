@@ -135,10 +135,10 @@ static Key keys[] = {
 	/* { MODKEY,                GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) }, */
 	/* { MODKEY,                GDK_KEY_f,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) }, */
 	/* { MODKEY,                GDK_KEY_slash,  spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) }, */
-	{ MODKEY,              	 GDK_g,      	 spawn,      SETPROP("_SURF_URI") },
-	{ MODKEY|GDK_SHIFT_MASK, GDK_g,      	 spawn,      SETPROP("_SURF_URI_RAW") },
-	{ MODKEY,                GDK_f,      	 spawn,      SETPROP("_SURF_FIND") },
-	{ MODKEY,                GDK_b,      	 spawn,      SETPROP("_SURF_BMARK") },
+	{ MODKEY,              	 GDK_KEY_g,      	 spawn,      SETPROP("_SURF_URI") },
+	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_g,      	 spawn,      SETPROP("_SURF_URI_RAW") },
+	{ MODKEY,                GDK_KEY_f,      	 spawn,      SETPROP("_SURF_FIND") },
+	{ MODKEY,                GDK_KEY_b,      	 spawn,      SETPROP("_SURF_BMARK") },
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
