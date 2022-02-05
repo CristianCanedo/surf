@@ -70,16 +70,16 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
 #define SETPROP(r, s, p) { \
         .v = (const char *[]){ "/bin/sh", "-c", \
              "prop=\"$(printf '%b' \"$(xprop -id $1 $2 " \
-             "| sed \"s/^$2(STRING) = //;s/^\\\"\\(.*\\)\\\"$/\\1/\" && cat ~/.surf/bookmarks)\" " \
+             "| sed \"s/^$2(UTF8_STRING) = //;s/^\\\"\\(.*\\)\\\"$/\\1/\" && cat ~/.surf/bookmarks)\" " \
              "| dmenu -l 10 -p \"$4\" -w $1)\" && " \
-             "xprop -id $1 -f $3 8s -set $3 \"$prop\"", \
+             "xprop -id $1 -f $3 8u -set $3 \"$prop\"", \
              "surf-setprop", winid, r, s, p, NULL \
         } \
 }
 
 #define DLSTATUS { \
         .v = (const char *[]){ "st", "-e", "/bin/sh", "-c",\
-            "while true; do cat $1/* 2>/dev/null || echo \"no hay descargas\";"\
+            "while true; do cat $1/* 2>/dev/null || echo \"No downloads.\";"\
             "A=; read A; "\
             "if [ $A = \"clean\" ]; then rm $1/*; fi; clear; done",\
             "surf-dlstatus", dlstatus, NULL } \
